@@ -1,0 +1,53 @@
+{
+    "name": "idimsh/parallel-processes",
+    "type": "library",
+    "description": "Run multiple Symfony CLI processes in parallel.",
+    "keywords": [
+        "PHP",
+        "symfony",
+        "symfony-process",
+        "parallel-processes",
+        "cli"
+    ],
+    "homepage": "https://github.com/idimsh/parallel-processes",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abdulrahman Dimashki",
+            "homepage": "https://github.com/idimsh",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "~7.1",
+        "symfony/process": "^5 || ^4",
+        "psr/log": "^1",
+        "react/event-loop": "^1",
+        "clue/utf8-react": "^1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=7.0",
+        "squizlabs/php_codesniffer": "^3.0",
+        "markrogoyski/simplelog-php": "0.*",
+        "idimsh/phpunit-tests": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "idimsh\\ParallelProcesses\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "idimsh\\ParallelProcessesUnitTest\\": "tests/unit",
+            "idimsh\\ParallelProcessesFunctionalTest\\": "tests/functional"
+        }
+    },
+    "scripts": {
+        "test-unit": "phpunit --testsuite unit",
+        "check-style": "phpcs src tests",
+        "fix-style": "phpcbf src tests"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

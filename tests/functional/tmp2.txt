@@ -1,0 +1,645 @@
+2020-12-26 19:40:39.311469	[info]	[test3.php]	[pid:1942]	loop of type: React\EventLoop\ExtEvLoop	{}	{}
+2020-12-26 19:40:39.435688	[info]	[test3.php]	[pid:1942]	in pre start callback for commandId: [long failed grep exec in bash]	{}	{}
+2020-12-26 19:40:39.436877	[debug]	[test3.php]	[pid:1942]	starting commandId: [long failed grep exec in bash] command: [exec /bin/bash -c "grep --color -rHn 'random string not there' /usr /var/"]	{}	{}
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 19:40:39.505150	[debug]	[test3.php]	[pid:1942]	Started commandId: [long failed grep exec in bash], command: [exec /bin/bash -c "grep --color -rHn 'random string not there' /usr /var/"], PID: [1943], remaining processes to run: [3]	{}	{}
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 19:40:39.507903	[info]	[test3.php]	[pid:1942]	in pre start callback for commandId: [failed ls]	{}	{}
+2020-12-26 19:40:39.509690	[debug]	[test3.php]	[pid:1942]	starting commandId: [failed ls] command: [exec /bin/bash -c "ls -la /tmp/not-found"]	{}	{}
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1944,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1944,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1944,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1944,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 19:40:39.515048	[debug]	[test3.php]	[pid:1942]	Started commandId: [failed ls], command: [exec /bin/bash -c "ls -la /tmp/not-found"], PID: [1944], remaining processes to run: [2]	{}	{}
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1944,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1944,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 19:40:39.518679	[info]	[test3.php]	[pid:1942]	in pre start callback for commandId: [command not found]	{}	{}
+2020-12-26 19:40:39.520096	[debug]	[test3.php]	[pid:1942]	starting commandId: [command not found] command: [exec /bin/bash -c command-not-found]	{}	{}
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(197) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1945,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(197) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1945,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(197) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1945,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(197) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1945,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 19:40:39.526004	[debug]	[test3.php]	[pid:1942]	Started commandId: [command not found], command: [exec /bin/bash -c command-not-found], PID: [1945], remaining processes to run: [1]	{}	{}
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1944,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": 2,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1944,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": 2,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1944,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": 2,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1944,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": 2,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 19:40:39.531124	[info]	[test3.php]	[pid:1942]	in exit callback for commandId: [failed ls] exit code: 2 is failed: true	{}	{}
+2020-12-26 19:40:39.532620	[info]	[test3.php]	[pid:1942]	stopping all	{}	{}
+2020-12-26 19:40:39.534044	[debug]	[test3.php]	[pid:1942]	command ID: [failed ls] is not running, exit code: [2]	{}	{}
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(199) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1945,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": 127,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(199) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1945,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": 127,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(199) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1945,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": 127,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(199) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1945,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": 127,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 19:40:39.537736	[info]	[test3.php]	[pid:1942]	in exit callback for commandId: [command not found] exit code: 127 is failed: true	{}	{}
+2020-12-26 19:40:39.539204	[info]	[test3.php]	[pid:1942]	stopping all	{}	{}
+2020-12-26 19:40:39.540659	[debug]	[test3.php]	[pid:1942]	command ID: [command not found] is not running, exit code: [127]	{}	{}
+2020-12-26 19:40:39.542311	[info]	[test3.php]	[pid:1942]	in pre start callback for commandId: [failed grep exec in bash]	{}	{}
+2020-12-26 19:40:39.543802	[debug]	[test3.php]	[pid:1942]	starting commandId: [failed grep exec in bash] command: [exec /bin/bash -c "grep -rHni 'grer p' /usr /var/"]	{}	{}
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 19:40:39.549399	[debug]	[test3.php]	[pid:1942]	Started commandId: [failed grep exec in bash], command: [exec /bin/bash -c "grep -rHni 'grer p' /usr /var/"], PID: [1946], remaining processes to run: [0]	{}	{}
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 19:40:39.555478	[debug]	[test3.php]	[pid:1942]	stopping commandId: [long failed grep exec in bash], PID: [1943]	{}	{}
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(242) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": false,
+    "signaled": true,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 15,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(242) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1943,
+    "running": false,
+    "signaled": true,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 15,
+    "stopsig": 0
+}"
+2020-12-26 19:40:39.561757	[info]	[test3.php]	[pid:1942]	in exit callback for commandId: [long failed grep exec in bash] exit code: 143 is failed: true	{}	{}
+2020-12-26 19:40:39.563326	[info]	[test3.php]	[pid:1942]	stopping all	{}	{}
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 19:40:39.566815	[debug]	[test3.php]	[pid:1942]	stopping commandId: [failed grep exec in bash], PID: [1946]	{}	{}
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:91:
+string(218) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": false,
+    "signaled": true,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 15,
+    "stopsig": 0
+}"
+/srv/src/HackedProcess/HackedProcess.php:92:
+string(218) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1946,
+    "running": false,
+    "signaled": true,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 15,
+    "stopsig": 0
+}"
+2020-12-26 19:40:39.572609	[info]	[test3.php]	[pid:1942]	in exit callback for commandId: [failed grep exec in bash] exit code: 143 is failed: true	{}	{}
+2020-12-26 19:40:39.574055	[info]	[test3.php]	[pid:1942]	stopping all	{}	{}
+failed ls####err
+ls: cannot access '/tmp/not-found': No such file or directory
+command not found####err
+/bin/bash: command-not-found: command not found

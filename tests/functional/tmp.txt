@@ -1,0 +1,2194 @@
+2020-12-26 18:58:33.467298	[info]	[test3.php]	[pid:1935]	loop of type: React\EventLoop\ExtEvLoop	{}	{}
+2020-12-26 18:58:33.564000	[info]	[test3.php]	[pid:1935]	in pre start callback for commandId: [long failed grep exec in bash]	{}	{}
+2020-12-26 18:58:33.565210	[debug]	[test3.php]	[pid:1935]	starting commandId: [long failed grep exec in bash] command: [exec /bin/bash -c "grep --color -rHn 'random string not there' /usr /var/"]	{}	{}
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 18:58:33.639464	[debug]	[test3.php]	[pid:1935]	Started commandId: [long failed grep exec in bash], command: [exec /bin/bash -c "grep --color -rHn 'random string not there' /usr /var/"], PID: [1936], remaining processes to run: [3]	{}	{}
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 18:58:33.641581	[info]	[test3.php]	[pid:1935]	in pre start callback for commandId: [failed ls]	{}	{}
+2020-12-26 18:58:33.643074	[debug]	[test3.php]	[pid:1935]	starting commandId: [failed ls] command: [exec /bin/bash -c "ls -la /tmp/not-found"]	{}	{}
+/srv/vendor/symfony/process/Process.php:1347:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1937,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1937,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 18:58:33.647762	[debug]	[test3.php]	[pid:1935]	Started commandId: [failed ls], command: [exec /bin/bash -c "ls -la /tmp/not-found"], PID: [1937], remaining processes to run: [2]	{}	{}
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1937,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 18:58:33.650403	[info]	[test3.php]	[pid:1935]	in pre start callback for commandId: [command not found]	{}	{}
+2020-12-26 18:58:33.652022	[debug]	[test3.php]	[pid:1935]	starting commandId: [command not found] command: [exec /bin/bash -c command-not-found]	{}	{}
+/srv/vendor/symfony/process/Process.php:1347:
+string(197) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1938,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(197) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1938,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 18:58:33.656561	[debug]	[test3.php]	[pid:1935]	Started commandId: [command not found], command: [exec /bin/bash -c command-not-found], PID: [1938], remaining processes to run: [1]	{}	{}
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(207) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1937,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": 2,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(208) "{
+    "command": "exec \/bin\/bash -c \"ls -la \/tmp\/not-found\"",
+    "pid": 1937,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 18:58:33.660089	[info]	[test3.php]	[pid:1935]	in exit callback for commandId: [failed ls] exit code: -1 is failed: false	{}	{}
+2020-12-26 18:58:33.661917	[debug]	[test3.php]	[pid:1935]	command ID: [failed ls] is not running, exit code: [-1]	{}	{}
+/srv/vendor/symfony/process/Process.php:1347:
+string(197) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1938,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 18:58:33.664096	[info]	[test3.php]	[pid:1935]	in pre start callback for commandId: [failed grep exec in bash]	{}	{}
+2020-12-26 18:58:33.665653	[debug]	[test3.php]	[pid:1935]	starting commandId: [failed grep exec in bash] command: [exec /bin/bash -c "grep -rHni 'grer p' /usr /var/"]	{}	{}
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 18:58:33.670340	[debug]	[test3.php]	[pid:1935]	Started commandId: [failed grep exec in bash], command: [exec /bin/bash -c "grep -rHni 'grer p' /usr /var/"], PID: [1939], remaining processes to run: [0]	{}	{}
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(199) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1938,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": 127,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(198) "{
+    "command": "exec \/bin\/bash -c command-not-found",
+    "pid": 1938,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 18:58:33.673564	[info]	[test3.php]	[pid:1935]	in exit callback for commandId: [command not found] exit code: -1 is failed: false	{}	{}
+2020-12-26 18:58:33.675022	[debug]	[test3.php]	[pid:1935]	command ID: [command not found] is not running, exit code: [-1]	{}	{}
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+failed ls####err
+ls: cannot access '/tmp/not-found': No such file or directory
+command not found####err
+/bin/bash: command-not-found: command not found
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(241) "{
+    "command": "exec \/bin\/bash -c \"grep --color -rHn 'random string not there' \/usr \/var\/\"",
+    "pid": 1936,
+    "running": false,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": 1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 18:58:39.690609	[info]	[test3.php]	[pid:1935]	in exit callback for commandId: [long failed grep exec in bash] exit code: 1 is failed: true	{}	{}
+2020-12-26 18:58:39.692243	[info]	[test3.php]	[pid:1935]	stopping all	{}	{}
+2020-12-26 18:58:39.693913	[debug]	[test3.php]	[pid:1935]	command ID: [long failed grep exec in bash] is not running, exit code: [1]	{}	{}
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+2020-12-26 18:58:39.702266	[debug]	[test3.php]	[pid:1935]	stopping commandId: [failed grep exec in bash], PID: [1939]	{}	{}
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(217) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": true,
+    "signaled": false,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 0,
+    "stopsig": 0
+}"
+/srv/vendor/symfony/process/Process.php:1347:
+string(218) "{
+    "command": "exec \/bin\/bash -c \"grep -rHni 'grer p' \/usr \/var\/\"",
+    "pid": 1939,
+    "running": false,
+    "signaled": true,
+    "stopped": false,
+    "exitcode": -1,
+    "termsig": 15,
+    "stopsig": 0
+}"
+2020-12-26 18:58:39.706851	[info]	[test3.php]	[pid:1935]	in exit callback for commandId: [failed grep exec in bash] exit code: 143 is failed: true	{}	{}
+2020-12-26 18:58:39.708458	[info]	[test3.php]	[pid:1935]	stopping all	{}	{}
