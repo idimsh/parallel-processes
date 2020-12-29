@@ -3,12 +3,16 @@ declare(strict_types=1);
 
 namespace idimsh\ParallelProcessesUnitTest;
 
+use idimsh\ParallelProcesses\Command\SimpleCommand;
 use idimsh\ParallelProcesses\ParallelCliProcesses;
 use idimsh\PhpUnitTests\Traits\PrivateMethodsTrait;
 use idimsh\PhpUnitTests\Traits\PrivatePropertiesTrait;
+use Symfony\Component\Process\Process;
 
 /**
- * @method stopAllInternal()
+ * @method execInternal(array $commandsArray)
+ * @method stopCommandInternal(string $commandId, float $timeout = 10, int $signal = null)
+ * @method addStopCommandTimer(string $commandId, float $timeout = 10, int $signal = null)
  * @method nextLoop()
  * @method periodicCheckRunning()
  * @method getRunningProcesses()
@@ -17,9 +21,10 @@ use idimsh\PhpUnitTests\Traits\PrivatePropertiesTrait;
  * @method startBackgroundProcess($command, $commandId)
  * @method resetStatus(array $commandsArray)
  *
- * @property array $processes
- * @property bool  $isStopped
- * @property bool  $commandsArray
+ * @property Process[]       $processes
+ * @property bool            $isStopped
+ * @property SimpleCommand[] $commandsArray
+ * @property bool[]          $commandsToStop
  */
 final class ParallelCliProcessesStub extends ParallelCliProcesses
 {

@@ -78,7 +78,8 @@ final class ParallelCliProcessesTest extends PHPUnitTestCase
                 0.01,
                 $this->callback(
                     function (callable $realCallable) use ($commandsArray) {
-                        $this->selfDependency->expects($this->once())->method('exec')->with($commandsArray);
+                        $this->selfDependency->expects($this->once())->method('execInternal')
+                            ->with($commandsArray);
                         $this->selfDependency->expects($this->once())->method('periodicCheckRunning');
                         $realCallable();
                         return true;
@@ -89,9 +90,10 @@ final class ParallelCliProcessesTest extends PHPUnitTestCase
     }
 
     /**
+     * @covers \idimsh\ParallelProcesses\ParallelCliProcesses::execInternal()
      * @throws null
      */
-    public function testExec(): void
+    public function testExecInternal(): void
     {
         $this->setSelfDependency($this->parallelCliProcesses);
         $commandsArray = [
@@ -103,7 +105,34 @@ final class ParallelCliProcessesTest extends PHPUnitTestCase
         $this->selfDependency->expects($this->once())
             ->method('nextLoop')
             ->with($commandsArray, 0, 2);
-        $this->parallelCliProcesses->exec($commandsArray);
+        $this->parallelCliProcesses->execInternal($commandsArray);
+    }
+
+    /**
+     * @covers \idimsh\ParallelProcesses\ParallelCliProcesses::addStopCommandTimer()
+     * @throws null
+     */
+    public function testAddStopCommandTimer(): void
+    {
+        $this->setSelfDependency($this->parallelCliProcesses);
+        $commandId = 'long process';
+        $timeout   = random_int(1, 10) * lcg_value();
+        $signal    = [random_int(0, 15), null][random_int(0, 1)];
+
+        $this->loop->expects($this->once())->method('addTimer')
+            ->with(
+                0.01,
+                $this->callback(
+                    function (callable $realCallable) use ($commandId, $timeout, $signal) {
+                        $this->selfDependency->expects($this->once())->method('stopCommandInternal')
+                            ->with($commandId, $timeout, $signal);
+                        $realCallable();
+                        return true;
+                    }
+                )
+            );
+
+        $this->parallelCliProcesses->addStopCommandTimer($commandId, $timeout, $signal);
     }
 
     /**
@@ -178,41 +207,6 @@ final class ParallelCliProcessesTest extends PHPUnitTestCase
     public function testStopAll(): void
     {
         $this->setSelfDependency($this->parallelCliProcesses);
-        $timeout = random_int(1, 10) * lcg_value();
-        $signal  = [random_int(0, 15), null][random_int(0, 1)];
-        $this->loop->expects($this->once())->method('addTimer')
-            ->with(
-                0.01,
-                $this->callback(
-                    function (callable $realCallable) use ($timeout, $signal) {
-                        $this->selfDependency->expects($this->once())->method('stopAllInternal')->with($timeout, $signal);
-                        $realCallable();
-                        return true;
-                    }
-                )
-            );
-
-        $this->parallelCliProcesses->stopAll($timeout, $signal);
-        // calling twice will not result in double calls
-        $this->parallelCliProcesses->stopAll($timeout, $signal);
-    }
-
-    public function testStopAllWhenStopped(): void
-    {
-        $this->parallelCliProcesses->isStopped = true;
-        $timeout                               = random_int(1, 10) * lcg_value();
-        $signal                                = [random_int(0, 15), null][random_int(0, 1)];
-        $this->loop->expects($this->never())->method('addTimer');
-        $this->parallelCliProcesses->stopAll($timeout, $signal);
-    }
-
-    /**
-     * @covers \idimsh\ParallelProcesses\ParallelCliProcesses::stopAllInternal()
-     * @throws null
-     */
-    public function testStopAllInternal(): void
-    {
-        $this->setSelfDependency($this->parallelCliProcesses);
         $timeout          = random_int(1, 10) * lcg_value();
         $signal           = [random_int(0, 15), null][random_int(0, 1)];
         $process1         = $this->createMock(Process::class);
@@ -225,24 +219,184 @@ final class ParallelCliProcessesTest extends PHPUnitTestCase
         ];
         $this->selfDependency->expects($this->once())->method('getRunningProcesses')
             ->willReturn($runningProcesses);
-
-        $process1->expects($this->once())->method('isRunning')->willReturn(true);
-        $process2->expects($this->once())->method('isRunning')->willReturn(false);
-        $process3->expects($this->once())->method('isRunning')->willReturn(true);
-
-        $process1->expects($this->once())->method('stop')->with($timeout);
-        $process2->expects($this->never())->method('stop');
-        $process3->expects($this->once())->method('stop')->with($timeout);
-
-        $this->selfDependency->expects($this->exactly(2))
-            ->method('processStopProcedure')
+        $this->selfDependency->expects($this->exactly(3))->method('addStopCommandTimer')
             ->with(
-                $this->logicalOr('1', '3rd process'),
-                $this->logicalOr($process1, $process3)
+                $this->logicalOr(
+                    '1',
+                    'long process',
+                    '3rd process'
+                ),
+                $timeout,
+                $signal
             );
 
-        $this->parallelCliProcesses->stopAllInternal($timeout, $signal);
+        $this->parallelCliProcesses->stopAll($timeout, $signal);
+        // calling twice will not result in double calls
+        $this->parallelCliProcesses->stopAll($timeout, $signal);
     }
+
+    /**
+     * @throws null
+     */
+    public function testStopAllWhenStopped(): void
+    {
+        $this->parallelCliProcesses->isStopped = true;
+        $timeout                               = random_int(1, 10) * lcg_value();
+        $signal                                = [random_int(0, 15), null][random_int(0, 1)];
+        $this->loop->expects($this->never())->method('addTimer');
+        $this->selfDependency->expects($this->never())->method('getRunningProcesses');
+        $this->selfDependency->expects($this->never())->method('addStopCommandTimer');
+        $this->parallelCliProcesses->stopAll($timeout, $signal);
+    }
+
+    /**
+     * @throws null
+     */
+    public function testStopCommand(): void
+    {
+        $this->setSelfDependency($this->parallelCliProcesses);
+        $timeout   = random_int(1, 10) * lcg_value();
+        $signal    = [random_int(0, 15), null][random_int(0, 1)];
+        $commandId = 'long process';
+
+        $this->selfDependency->expects($this->never())->method('getRunningProcesses');
+        $this->selfDependency->expects($this->exactly(1))->method('addStopCommandTimer')
+            ->with(
+                $commandId,
+                $timeout,
+                $signal
+            );
+
+        $this->parallelCliProcesses->stopCommand($commandId, $timeout, $signal);
+    }
+
+    /**
+     * @throws null
+     */
+    public function testStopCommandWhenNotRunning(): void
+    {
+        $this->setSelfDependency($this->parallelCliProcesses);
+        $this->parallelCliProcesses->isStopped = true;
+        $timeout                               = random_int(1, 10) * lcg_value();
+        $signal                                = [random_int(0, 15), null][random_int(0, 1)];
+        $commandId                             = 'long process';
+
+        $this->selfDependency->expects($this->never())->method('getRunningProcesses');
+        $this->selfDependency->expects($this->never())->method('addStopCommandTimer');
+        $this->parallelCliProcesses->stopCommand($commandId, $timeout, $signal);
+    }
+
+    /**
+     * @covers \idimsh\ParallelProcesses\ParallelCliProcesses::stopCommandInternal()
+     * @throws null
+     */
+    public function testStopCommandInternal(): void
+    {
+        $this->setSelfDependency($this->parallelCliProcesses);
+        $commandId = 'long process';
+        $timeout   = random_int(1, 10) * lcg_value();
+        $signal    = [random_int(0, 15), null][random_int(0, 1)];
+        $process1  = $this->createMock(Process::class);
+        $command1  = $this->createMock(SimpleCommand::class);
+
+        $this->parallelCliProcesses->processes     = [
+            $commandId => $process1,
+        ];
+        $this->parallelCliProcesses->commandsArray = [
+            $commandId => $command1,
+        ];
+
+        $process1->expects($this->once())->method('isRunning')->willReturn(true);
+        $process1->expects($this->once())->method('stop')->with($timeout, $signal);
+
+        $this->selfDependency->expects($this->once())
+            ->method('processStopProcedure')
+            ->with(
+                $commandId,
+                $process1
+            );
+
+        $this->parallelCliProcesses->stopCommandInternal($commandId, $timeout, $signal);
+        $this->assertEquals([], $this->parallelCliProcesses->processes);
+        $this->assertEquals(
+            [$commandId => $command1],
+            $this->parallelCliProcesses->commandsArray
+        );
+        $this->assertEquals(
+            [$commandId => true],
+            $this->parallelCliProcesses->commandsToStop
+        );
+    }
+
+    /**
+     * @covers \idimsh\ParallelProcesses\ParallelCliProcesses::stopCommandInternal()
+     * @throws null
+     */
+    public function testStopCommandInternalWhenProcessNotStarted(): void
+    {
+        $this->setSelfDependency($this->parallelCliProcesses);
+        $commandId                                 = 'long process';
+        $timeout                                   = random_int(1, 10) * lcg_value();
+        $signal                                    = [random_int(0, 15), null][random_int(0, 1)];
+        $command                                   = $this->createMock(SimpleCommand::class);
+        $process1                                  = $this->createMock(Process::class);
+        $this->parallelCliProcesses->processes     = [
+            'another command ID' => $process1,
+        ];
+        $this->parallelCliProcesses->commandsArray = [
+            'another command ID' => $command,
+        ];
+
+        $this->selfDependency->expects($this->never())->method('processStopProcedure');
+        $process1->expects($this->never())->method('isRunning');
+        $process1->expects($this->never())->method('stop');
+
+        $this->parallelCliProcesses->stopCommandInternal($commandId, $timeout, $signal);
+        $this->assertEquals(
+            ['another command ID' => $command],
+            $this->parallelCliProcesses->commandsArray
+        );
+        $this->assertEquals(
+            [$commandId => true],
+            $this->parallelCliProcesses->commandsToStop
+        );
+    }
+
+    /**
+     * @covers \idimsh\ParallelProcesses\ParallelCliProcesses::stopCommandInternal()
+     * @throws null
+     */
+    public function testStopCommandInternalWhenProcessIsNotRunning(): void
+    {
+        $this->setSelfDependency($this->parallelCliProcesses);
+        $commandId = 'long process';
+        $timeout   = random_int(1, 10) * lcg_value();
+        $signal    = [random_int(0, 15), null][random_int(0, 1)];
+        $command   = $this->createMock(SimpleCommand::class);
+        $process1  = $this->createMock(Process::class);
+
+        $this->parallelCliProcesses->processes     = [
+            $commandId => $process1,
+        ];
+        $this->parallelCliProcesses->commandsArray = [
+            $commandId => $command,
+        ];
+
+        $process1->expects($this->once())->method('isRunning')->willReturn(false);
+        $process1->expects($this->never())->method('stop');
+        $this->selfDependency->expects($this->never())->method('processStopProcedure');
+
+        $this->parallelCliProcesses->stopCommandInternal($commandId, $timeout, $signal);
+        $this->assertEquals(
+            [$commandId => $command],
+            $this->parallelCliProcesses->commandsArray
+        );
+        $this->assertEquals(
+            [$commandId => true],
+            $this->parallelCliProcesses->commandsToStop
+        );
+    }
+
 
     /**
      * @covers \idimsh\ParallelProcesses\ParallelCliProcesses::nextLoop()
@@ -421,6 +575,38 @@ final class ParallelCliProcessesTest extends PHPUnitTestCase
         $this->assertEquals(2, $alreadyRun);
     }
 
+
+    /**
+     * @covers \idimsh\ParallelProcesses\ParallelCliProcesses::execNext()
+     * @throws null
+     */
+    public function testExecNextWhenCommandMarkedForStop(): void
+    {
+        $this->setSelfDependency($this->parallelCliProcesses);
+        $command0                                   = $this->createMock(SimpleCommand::class);
+        $commandTwo                                 = $this->createMock(SimpleCommand::class);
+        $commandsArray                              = [
+            0     => $command0,
+            'two' => $commandTwo,
+        ];
+        $alreadyRun                                 = 1;
+        $totalCount                                 = 3;
+        $this->parallelCliProcesses->commandsToStop = [0 => true];
+        $this->selfDependency->expects($this->never())->method('startBackgroundProcess');
+        $params = [
+            &$commandsArray,
+            &$alreadyRun,
+            $totalCount,
+        ];
+        $this->invokeMethodParamsByReference(
+            $this->parallelCliProcesses,
+            'execNext',
+            $params
+        );
+        $this->assertEquals(['two' => $commandTwo], $commandsArray);
+        $this->assertEquals(2, $alreadyRun);
+    }
+
     /**
      * @covers \idimsh\ParallelProcesses\ParallelCliProcesses::execNext()
      * @throws null
@@ -454,12 +640,13 @@ final class ParallelCliProcessesTest extends PHPUnitTestCase
     public function testExecNextWhenProcessIsNull(): void
     {
         $this->setSelfDependency($this->parallelCliProcesses);
-        $commandTwo    = $this->createMock(SimpleCommand::class);
-        $commandsArray = [
+        $commandTwo                                = $this->createMock(SimpleCommand::class);
+        $commandsArray                             = [
             'two' => $commandTwo,
         ];
-        $alreadyRun    = -41;
-        $totalCount    = 50;
+        $alreadyRun                                = -41;
+        $totalCount                                = 50;
+        $this->parallelCliProcesses->commandsArray = $commandsArray;
         $this->selfDependency->expects($this->once())->method('startBackgroundProcess')
             ->with($commandTwo, 'two')
             ->willReturn(null);
@@ -602,7 +789,13 @@ final class ParallelCliProcessesTest extends PHPUnitTestCase
             $inParallelCliProcess,
             $inCommand,
             $inCommandId
-        ) use (&$isCallback1Called, $process0, $exitCode, $commandId, $command0) {
+        ) use (
+            &$isCallback1Called,
+            $process0,
+            $exitCode,
+            $commandId,
+            $command0
+        ) {
             $isCallback1Called = true;
             $this->assertEquals($inProcess, $process0);
             $this->assertEquals($inExitCode, $exitCode);
@@ -711,7 +904,12 @@ final class ParallelCliProcessesTest extends PHPUnitTestCase
             $inProcess,
             $inCommand,
             $inCommandId
-        ) use (&$isCbBeforeStartCalled, $process, $command, $commandId) {
+        ) use (
+            &$isCbBeforeStartCalled,
+            $process,
+            $command,
+            $commandId
+        ) {
             $isCbBeforeStartCalled = true;
             $this->assertEquals($inParallelCliProcesses, $this->parallelCliProcesses);
             $this->assertEquals($inProcess, $process);
@@ -731,7 +929,14 @@ final class ParallelCliProcessesTest extends PHPUnitTestCase
             $inProcess,
             $inCommand,
             $inCommandId
-        ) use (&$isCbProcessStreamRead, $toBeSentType, $toBeSentData, $process, $command, $commandId) {
+        ) use (
+            &$isCbProcessStreamRead,
+            $toBeSentType,
+            $toBeSentData,
+            $process,
+            $command,
+            $commandId
+        ) {
             $isCbProcessStreamRead = true;
             $this->assertEquals($inType, $toBeSentType);
             $this->assertEquals($inData, $toBeSentData);

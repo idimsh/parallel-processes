@@ -29,8 +29,7 @@ class NewProcessFactory
         ?array $env = null,
         $input = null,
         ?float $timeout = null
-    ): Process
-    {
+    ): Process {
         try {
             $instance = new BetterProcess(
                 $command,
@@ -39,8 +38,7 @@ class NewProcessFactory
                 $input,
                 $timeout
             );
-        }
-        catch (\Symfony\Component\Process\Exception\ExceptionInterface $exception) {
+        } catch (\Symfony\Component\Process\Exception\ExceptionInterface $exception) {
             throw new Exception\ProcessRuntimeException(
                 sprintf(
                     'Unable to create process, internal error: [%s]',
@@ -68,8 +66,7 @@ class NewProcessFactory
         ?array $env = null,
         $input = null,
         ?float $timeout = null
-    ): Process
-    {
+    ): Process {
         try {
             $instance = BetterProcess::fromShellCommandline(
                 $command,
@@ -78,8 +75,7 @@ class NewProcessFactory
                 $input,
                 $timeout
             );
-        }
-        catch (\Symfony\Component\Process\Exception\ExceptionInterface $exception) {
+        } catch (\Symfony\Component\Process\Exception\ExceptionInterface $exception) {
             throw new Exception\ProcessRuntimeException(
                 sprintf(
                     'Unable to create process, internal error: [%s]',

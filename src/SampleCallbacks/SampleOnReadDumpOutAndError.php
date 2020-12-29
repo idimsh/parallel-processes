@@ -20,8 +20,7 @@ class SampleOnReadDumpOutAndError
 
     public function __construct(
         WritableStreamInterface $writableStream
-    )
-    {
+    ) {
         $this->writableStream = $writableStream;
     }
 
@@ -32,8 +31,7 @@ class SampleOnReadDumpOutAndError
         Process $process,
         SimpleCommand $command,
         string $commandId
-    ): void
-    {
+    ): void {
         $out = $process->getIncrementalOutput();
         $err = $process->getIncrementalErrorOutput();
         if ($out) {

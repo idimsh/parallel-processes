@@ -17,8 +17,7 @@ class SampleOnStartLog
         Process $process,
         SimpleCommand $command,
         string $commandId
-    )
-    {
+    ) {
         if ($parallelCliProcesses->getLogger()) {
             $parallelCliProcesses->getLogger()->info(
                 "in pre start callback for commandId: [{$commandId}]"

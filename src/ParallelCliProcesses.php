@@ -47,9 +47,14 @@ class ParallelCliProcesses
     protected $commandsArray = [];
 
     /**
-     * @var bool
+     * @var bool[]
      */
-    protected $isSignalRegistered = false;
+    protected $commandsToStop = [];
+
+    /**
+     * @var float
+     */
+    protected $loopInterval = 0.01;
 
     /**
      * @var bool
@@ -60,7 +65,7 @@ class ParallelCliProcesses
         BackgroundProcessesConfig $backgroundProcessesConfig,
         NewProcessFactory $newProcessFactory,
         LoopInterface $loop,
-        ?LoggerInterface $logger
+        ?LoggerInterface $logger = null
     )
     {
         $this->processesConfig   = $backgroundProcessesConfig;
@@ -81,6 +86,23 @@ class ParallelCliProcesses
         $this->selfDependency = $this;
     }
 
+    /**
+     * The interval the loop will execute commands using, default to 10ms
+     *
+     * @return float
+     */
+    public function getLoopInterval(): float
+    {
+        return $this->loopInterval;
+    }
+
+    /**
+     * @param float $loopInterval
+     */
+    public function setLoopInterval(float $loopInterval): void
+    {
+        $this->loopInterval = $loopInterval;
+    }
 
     /**
      * @param SimpleCommand[] $commandsArray
@@ -90,35 +112,11 @@ class ParallelCliProcesses
     ): void
     {
         $this->loop->addTimer(
-            0.01,
+            $this->getLoopInterval(),
             function () use ($commandsArray) {
-                $this->selfDependency->exec($commandsArray);
+                $this->selfDependency->execInternal($commandsArray);
                 $this->selfDependency->periodicCheckRunning();
             }
-        );
-    }
-
-    /**
-     * @param SimpleCommand[] $commandsArray
-     * @throws Exception\ParallelProcessThrowable
-     * @throws Exception\ProcessRuntimeException
-     */
-    public function exec(
-        array $commandsArray
-    ): void
-    {
-        if ($this->selfDependency->isAnyRunning()) {
-            throw new ProcessRuntimeException(
-                'Can\'t run new processes while current processes not exited'
-            );
-        }
-        $this->selfDependency->resetStatus($commandsArray);
-        $totalCount = count($commandsArray);
-        $alreadyRun = 0;
-        $this->selfDependency->nextLoop(
-            $commandsArray,
-            $alreadyRun,
-            $totalCount
         );
     }
 
@@ -154,44 +152,101 @@ class ParallelCliProcesses
             return;
         }
         $this->isStopped = true;
-        $this->loop->addTimer(
-            0.01,
-            function () use ($timeout, $signal) {
-                $this->selfDependency->stopAllInternal($timeout, $signal);
-            }
-        );
-    }
-
-
-    /**
-     * This will try to stop sequentially, process by process, and wait max of $timeout for each to stop.
-     *
-     * @todo find a way to do this in parallel
-     * @param float    $timeout
-     * @param int|null $signal
-     */
-    protected function stopAllInternal(float $timeout = 10, int $signal = null): void
-    {
         foreach ($this->selfDependency->getRunningProcesses() as $commandId => $process) {
-            if (!$process->isRunning()) {
-                continue;
-            }
-            $this->logger
-            && $this->logger->debug(
-                sprintf(
-                    'stopping commandId: [%s], PID: [%d]',
-                    $commandId,
-                    $process->getPid()
-                )
-            );
-            unset($this->processes[$commandId]);
-            $process->stop($timeout);
-            $this->selfDependency->processStopProcedure((string) $commandId, $process);
+            $this->selfDependency->addStopCommandTimer((string) $commandId, $timeout, $signal);
         }
     }
 
     /**
-     * @param array $commandsArray
+     * Stop a single command, and prevent it from starting if it is not yet started.
+     *
+     * @param string   $commandId
+     * @param float    $timeout
+     * @param int|null $signal
+     */
+    public function stopCommand(string $commandId, float $timeout = 10.0, ?int $signal = null): void
+    {
+        if ($this->isStopped) {
+            return;
+        }
+        $this->selfDependency->addStopCommandTimer($commandId, $timeout, $signal);
+    }
+
+
+    /**
+     * @param SimpleCommand[] $commandsArray
+     * @throws Exception\ParallelProcessThrowable
+     * @throws Exception\ProcessRuntimeException
+     */
+    protected function execInternal(
+        array $commandsArray
+    ): void
+    {
+        if ($this->selfDependency->isAnyRunning()) {
+            throw new ProcessRuntimeException(
+                'Can\'t run new processes while current processes not exited'
+            );
+        }
+        $this->selfDependency->resetStatus($commandsArray);
+        $totalCount = count($commandsArray);
+        $alreadyRun = 0;
+        $this->selfDependency->nextLoop(
+            $commandsArray,
+            $alreadyRun,
+            $totalCount
+        );
+    }
+
+    /**
+     * Stop a single command, and prevent it from starting if it is not yet started.
+     *
+     * @param string   $commandId
+     * @param float    $timeout
+     * @param int|null $signal
+     */
+    protected function addStopCommandTimer(string $commandId, float $timeout = 10.0, ?int $signal = null): void
+    {
+        $this->loop->addTimer(
+            $this->getLoopInterval(),
+            function () use ($commandId, $timeout, $signal) {
+                $this->selfDependency->stopCommandInternal($commandId, $timeout, $signal);
+            }
+        );
+    }
+
+    /**
+     * Stop single process.
+     *
+     * @param string   $commandId
+     * @param float    $timeout
+     * @param int|null $signal
+     */
+    protected function stopCommandInternal(string $commandId, float $timeout = 10, int $signal = null): void
+    {
+        // this will prevent the command to start in case it is not started already.
+        $this->commandsToStop[$commandId] = true;
+        $process = $this->processes[$commandId] ?? null;
+        if (!$process || !$process->isRunning()) {
+            // the process is not started yet, or started and died
+            return;
+        }
+        // @codeCoverageIgnoreStart
+        $this->logger
+        && $this->logger->debug(
+            sprintf(
+                'stopping commandId: [%s], PID: [%d]',
+                $commandId,
+                $process->getPid()
+            )
+        );
+        // @codeCoverageIgnoreEnd
+        unset($this->processes[$commandId]);
+        $process->stop($timeout, $signal);
+        $this->selfDependency->processStopProcedure($commandId, $process);
+    }
+
+    /**
+     * @param array $commandsArray by reference, items will be removed as in stack
      * @param int   $alreadyRun
      * @param int   $totalCount
      * @throws Exception\ParallelProcessThrowable
@@ -205,12 +260,14 @@ class ParallelCliProcesses
     {
         if ($this->isStopped) {
             if ($this->logger && count($commandsArray) > 0) {
-                $this->logger->info(
+                // @codeCoverageIgnoreStart
+                $this->logger->debug(
                     sprintf(
-                        '[%d] command will not be started since stop is requested',
+                        '[%d] command(s) will not be started since stop is requested',
                         count($commandsArray)
                     )
                 );
+                // @codeCoverageIgnoreEnd
             }
             return;
         }
@@ -219,7 +276,8 @@ class ParallelCliProcesses
         }
         $this->selfDependency->execNext($commandsArray, $alreadyRun, $totalCount);
         $this->loop->addTimer(
-            $this->selfDependency->canRunMoreProcesses() ? 0.01 : $this->processesConfig->getProcessSleepMSec() / 1000,
+            $this->selfDependency->canRunMoreProcesses() ? $this->getLoopInterval()
+                : $this->processesConfig->getProcessSleepMSec() / 1000,
             function () use (&$commandsArray, &$alreadyRun, $totalCount) {
                 $this->selfDependency->nextLoop(
                     $commandsArray,
@@ -249,16 +307,30 @@ class ParallelCliProcesses
         }
         $commandId = (string) key($commandsArray);
         array_shift($commandsArray);
+        $alreadyRun++;
+        if ($this->commandsToStop[$commandId] ?? false) {
+            // a request to 'stop' this command was received before the command is even started.
+            // @codeCoverageIgnoreStart
+            $this->logger
+            && $this->logger->debug(
+                sprintf(
+                    'commandId: [%s] will not be started, since a stop was requested for it',
+                    $commandId
+                )
+            );
+            // @codeCoverageIgnoreEnd
+            return;
+        }
         $process = $this->selfDependency->startBackgroundProcess(
             $command,
             $commandId
         );
-        $alreadyRun++;
         if ($process === null) {
             // startBackgroundProcess has already logged the failure
             return;
         }
         if ($this->logger) {
+            // @codeCoverageIgnoreStart
             $this->logger->debug(
                 sprintf(
                     'Started commandId: [%s], command: [%s], PID: [%d], remaining processes to run: [%d]',
@@ -268,6 +340,7 @@ class ParallelCliProcesses
                     $totalCount - $alreadyRun
                 )
             );
+            // @codeCoverageIgnoreEnd
         }
     }
 
@@ -285,7 +358,9 @@ class ParallelCliProcesses
             }
             else {
                 if ($this->logger) {
+                    // @codeCoverageIgnoreStart
                     $this->logger->info('No more processes are running');
+                    // @codeCoverageIgnoreEnd
                 }
             }
         }
@@ -306,9 +381,11 @@ class ParallelCliProcesses
             else {
                 $exitCode = $this->selfDependency->processStopProcedure($commandId, $process);
                 if ($this->logger) {
+                    // @codeCoverageIgnoreStart
                     $this->logger->debug(
                         sprintf('command ID: [%s] is not running, exit code: [%s]', $commandId, var_export($exitCode, true))
                     );
+                    // @codeCoverageIgnoreEnd
                 }
             }
         }
@@ -327,7 +404,7 @@ class ParallelCliProcesses
         }
         if ($this->processesConfig->getCallbackProcessExit()) {
             $this->loop->addTimer(
-                0.01,
+                $this->getLoopInterval(),
                 function () use (&$process, $exitCode, $commandId) {
                     $this->processesConfig->getCallbackProcessExit()(
                         $process,
@@ -380,6 +457,7 @@ class ParallelCliProcesses
                 $callback($this, $process, $command, $commandId);
             }
             if ($this->logger) {
+                // @codeCoverageIgnoreStart
                 $this->logger->debug(
                     sprintf(
                         'starting commandId: [%s] command: [%s]',
@@ -387,6 +465,7 @@ class ParallelCliProcesses
                         $process->getCommandLine()
                     )
                 );
+                // @codeCoverageIgnoreEnd
             }
             $callback = !$this->processesConfig->getCallbackProcessStreamRead()
                 ? null
@@ -418,6 +497,8 @@ class ParallelCliProcesses
     {
         $this->processes     = [];
         $this->commandsArray = $commandsArray;
+        $this->commandsToStop = [];
         $this->isStopped     = false;
     }
+
 }

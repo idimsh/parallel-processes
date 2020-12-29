@@ -122,5 +122,4 @@ class BetterProcess extends Process
         }
         parent::start($callback, $env);
     }
-
 }

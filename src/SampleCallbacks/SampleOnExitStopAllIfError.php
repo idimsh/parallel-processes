@@ -18,8 +18,7 @@ class SampleOnExitStopAllIfError
         ParallelCliProcesses $parallelCliProcesses,
         SimpleCommand $command,
         string $commandId
-    )
-    {
+    ) {
         $isFailed = $exitCode && $exitCode > 0;
         if ($parallelCliProcesses->getLogger()) {
             $parallelCliProcesses->getLogger()->info(

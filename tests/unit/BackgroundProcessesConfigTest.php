@@ -64,7 +64,8 @@ final class BackgroundProcessesConfigTest extends TestCase
 
     public function testSetCallbackProcessExit(): void
     {
-        $cb = function (){};
+        $cb = function () {
+        };
         $this->assertSame($this->backgroundProcessesConfig, $this->backgroundProcessesConfig->setCallbackProcessExit($cb));
         $this->assertSame($cb, $this->backgroundProcessesConfig->getCallbackProcessExit());
     }
@@ -76,7 +77,8 @@ final class BackgroundProcessesConfigTest extends TestCase
 
     public function testSetCallbackProcessStreamRead(): void
     {
-        $cb = function (){};
+        $cb = function () {
+        };
         $this->assertSame($this->backgroundProcessesConfig, $this->backgroundProcessesConfig->setCallbackProcessStreamRead($cb));
         $this->assertSame($cb, $this->backgroundProcessesConfig->getCallbackProcessStreamRead());
     }
@@ -88,7 +90,8 @@ final class BackgroundProcessesConfigTest extends TestCase
 
     public function testSetCallbackOnBeforeStart(): void
     {
-        $cb = function (){};
+        $cb = function () {
+        };
         $this->assertSame($this->backgroundProcessesConfig, $this->backgroundProcessesConfig->setCallbackOnBeforeStart($cb));
         $this->assertSame($cb, $this->backgroundProcessesConfig->getCallbackOnBeforeStart());
     }
