@@ -8,9 +8,6 @@ services:
           PHP_VERSION: 7.3
           DOCROOT: public
           LOG_TO_SRV: 1
-    ports:
-      - '8082:80'
     volumes:
       - '.:/srv:rw'
-#      - '/home/dimsh/Projects/mql-prices:/srv:rw'
-#      - 'd:/data-root/Projects/PHP/Personal/mql-prices:/srv:rw'
+
