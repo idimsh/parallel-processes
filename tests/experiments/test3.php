@@ -4,7 +4,7 @@ use idimsh\ParallelProcesses\SampleCallbacks\SampleOnExitStopAllIfError;
 use idimsh\ParallelProcesses\SampleCallbacks\SampleOnReadDumpOutAndError;
 use idimsh\ParallelProcesses\SampleCallbacks\SampleOnStartLog;
 
-require_once '../../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 (function () {
     $loop              = \React\EventLoop\Factory::create();
@@ -21,12 +21,8 @@ require_once '../../vendor/autoload.php';
     );
 
     $commandsArray = [
-        'success grep'         => \idimsh\ParallelProcesses\Command\SimpleCommand::fromString(
-            'exec grep --color -rHn \'sudo\' /etc'
-        )->setAsShellEscaped(true),
-
-        'long failed grep exec no bash'         => \idimsh\ParallelProcesses\Command\SimpleCommand::fromString(
-            'exec grep --color -rHn \'random string not there\' /usr /var/'
+        'long failed grep exec in bash'         => \idimsh\ParallelProcesses\Command\SimpleCommand::fromString(
+            'exec /bin/bash -c "grep --color -rHn \'random string not there\' /usr /var/"'
         )->setAsShellEscaped(true),
 
         'failed ls'         => \idimsh\ParallelProcesses\Command\SimpleCommand::fromString(
