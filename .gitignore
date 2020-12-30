@@ -3,5 +3,4 @@
 /.idea
 /system
 /build
-/build/*
 /.phpunit*
