@@ -7,14 +7,17 @@ use idimsh\ParallelProcesses\BackgroundProcessesConfig;
 use idimsh\ParallelProcesses\Command\SimpleCommand;
 use idimsh\ParallelProcesses\NewProcessFactory;
 use idimsh\ParallelProcesses\ParallelCliProcesses;
-use idimsh\PhpUnitTests\Unit\PHPUnitTestCase;
+use idimsh\PhpUnitTests\Traits\SelfDependencyTestCaseTrait;
 use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use React\EventLoop\LoopInterface;
 use Symfony\Component\Process\Process;
 
-final class ParallelCliProcessesTest extends PHPUnitTestCase
+final class ParallelCliProcessesTest extends TestCase
 {
+    use SelfDependencyTestCaseTrait;
+
     /**
      * @var BackgroundProcessesConfig|MockObject
      */

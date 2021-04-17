@@ -6,10 +6,10 @@ namespace idimsh\ParallelProcessesUnitTest;
 use idimsh\ParallelProcesses\Exception\ProcessRuntimeException;
 use idimsh\ParallelProcesses\HackedProcess\BetterProcess;
 use idimsh\ParallelProcesses\NewProcessFactory;
-use idimsh\PhpUnitTests\Unit\PHPUnitTestCase;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
 
-final class NewProcessFactoryTest extends PHPUnitTestCase
+final class NewProcessFactoryTest extends TestCase
 {
     /**
      * @var NewProcessFactory

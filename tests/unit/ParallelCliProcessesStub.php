@@ -7,6 +7,7 @@ use idimsh\ParallelProcesses\Command\SimpleCommand;
 use idimsh\ParallelProcesses\ParallelCliProcesses;
 use idimsh\PhpUnitTests\Traits\PrivateMethodsTrait;
 use idimsh\PhpUnitTests\Traits\PrivatePropertiesTrait;
+use idimsh\PhpUnitTests\Traits\PropertiesAndMethodsReflectionTrait;
 use Symfony\Component\Process\Process;
 
 /**
