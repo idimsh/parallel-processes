@@ -274,9 +274,12 @@ class ParallelCliProcesses
         if (count($commandsArray) === 0) {
             return;
         }
-        $this->selfDependency->execNext($commandsArray, $alreadyRun, $totalCount);
+        if ($this->selfDependency->canRunMoreProcesses()) {
+            $this->selfDependency->execNext($commandsArray, $alreadyRun, $totalCount);
+        }
         $this->loop->addTimer(
-            $this->selfDependency->canRunMoreProcesses() ? $this->getLoopInterval()
+            $this->selfDependency->canRunMoreProcesses()
+                ? $this->getLoopInterval()
                 : $this->processesConfig->getProcessSleepMSec() / 1000,
             function () use (&$commandsArray, &$alreadyRun, $totalCount) {
                 $this->selfDependency->nextLoop(
