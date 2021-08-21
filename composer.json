@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">7.1",
-        "symfony/process": "^5 || ^4",
+        "symfony/process": "^5 || ^4 || ^3",
         "psr/log": "^1",
         "react/event-loop": "^1",
         "clue/utf8-react": "^1"
