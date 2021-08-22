@@ -52,6 +52,7 @@ class BetterProcess extends Process
      */
     protected $previousRealExitCode = null;
 
+
     /**
      * HackedProcess constructor.
      *
@@ -62,7 +63,13 @@ class BetterProcess extends Process
      * @param float|null  $timeout
      * @throws \Symfony\Component\Process\Exception\ExceptionInterface
      */
-    public function __construct(array $command, ?string $cwd = null, ?array $env = null, $input = null, ?float $timeout = 60.0)
+    public function __construct(
+        array $command,
+        ?string $cwd = null,
+        ?array $env = null,
+        $input = null,
+        ?float $timeout = 60.0
+    )
     {
         parent::__construct($command, $cwd, $env, $input, $timeout);
 
@@ -80,7 +87,12 @@ class BetterProcess extends Process
         $this->methodClose->setAccessible(true);
     }
 
-    protected function updateStatus(bool $blocking)
+
+    /**
+     * @param bool $blocking
+     * @throws \ReflectionException
+     */
+    protected function updateStatus($blocking)
     {
         if (self::STATUS_STARTED !== $this->propStatus->getValue($this)) {
             return;
@@ -109,17 +121,17 @@ class BetterProcess extends Process
         }
     }
 
+
     /**
      * @param callable|null $callback
-     * @param array         $env
      * @throws \Symfony\Component\Process\Exception\LogicException
      * @throws \Symfony\Component\Process\Exception\RuntimeException
      */
-    public function start(?callable $callback = null, array $env = []): void
+    public function start(callable $callback = null/*, array $env = []*/): void
     {
         if (!$this->isRunning()) {
             $this->previousRealExitCode = null;
         }
-        parent::start($callback, $env);
+        parent::start($callback/*, $env*/);
     }
 }
