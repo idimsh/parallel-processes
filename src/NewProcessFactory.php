@@ -68,7 +68,7 @@ class NewProcessFactory
         ?float $timeout = null
     ): Process {
         try {
-            $instance = BetterProcess::fromShellCommandline(
+            $instance = new BetterProcess(
                 $command,
                 $cwd,
                 $env,

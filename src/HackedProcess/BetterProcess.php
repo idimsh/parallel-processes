@@ -56,7 +56,7 @@ class BetterProcess extends Process
     /**
      * HackedProcess constructor.
      *
-     * @param array       $command
+     * @param array|string       $command
      * @param null|string $cwd
      * @param array|null  $env
      * @param mixed|null  $input
@@ -64,11 +64,11 @@ class BetterProcess extends Process
      * @throws \Symfony\Component\Process\Exception\ExceptionInterface
      */
     public function __construct(
-        array $command,
-        ?string $cwd = null,
-        ?array $env = null,
+        $command,
+        $cwd = null,
+        array $env = null,
         $input = null,
-        ?float $timeout = 60.0
+        float $timeout = 60.0
     )
     {
         parent::__construct($command, $cwd, $env, $input, $timeout);
